@@ -1,12 +1,14 @@
-// Require Needed Modules
+require('dotenv').config()
 const express = require('express')
-
-// Initialize App Variable
 const app = express()
 
 // Routes
 app.get('/', (req, res) => {
     res.send('Welcome to an awesome Book Application!')
+})
+
+app.get('*', (req,res) => {
+    res.status(404).send('<h1>404</h1>')
 })
 
 
